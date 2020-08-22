@@ -5,6 +5,7 @@
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
 - [Modificamos el archivo application properties](#modificamos-el-archivo-application-propertiess)
 - [Creamos el paquete y clase del modelo](#creamos-el-paquete-y-clase-del-modelo)
+- [Creamos el paquete Dao y su interfaz](#creamos-el-paquete-dao-y-su-interfaz)
 
 
 ## Introducción
@@ -127,7 +128,7 @@ public class Persona {
 }
 
 ```
-##Creamos el paquete Dao y la interfaz
+##Creamos el paquete Dao y su interfaz
 
 1. Creamos el paquete
 <div align="center">
@@ -142,6 +143,8 @@ public class Persona {
 <div align="center">
   <img src="img/in.jpg">
 </div>
+
+Ponemos nombre a la interfaz
 <div align="center">
   <img src="img/in2.jpg">
 </div>
@@ -159,8 +162,121 @@ public interface IPersonaDao extends JpaRepository<Persona, Long> {
 
 }
 ```
+##Creamos el paquete Service y su interfaz
+1. Creamos el paquete
+<div align="center">
+  <img src="img/pa.jpg">
+</div>
+2. Le ponemos el nombre de Service
+<div align="center">
+  <img src="img/se.jpg">
+</div>
+3. Creamos la interfaz "IPersonaService"
+<div align="center">
+  <img src="img/in.jpg">
+</div>
 
+Ponemos nombre a la interfaz
+<div align="center">
+  <img src="img/in3.jpg">
+</div>
 
+4. Ingresamos el código siguiente:
+```java
+package com.ws.crudsql.service;
+
+import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import com.ws.crudsql.model.Persona;
+
+public interface IPersonaService {
+
+	Persona registrar(Persona t);
+	
+	Persona modificar(Persona t);
+
+	boolean eliminar(Long id);
+
+	Persona listarId(Long id);
+
+	List<Persona> listar();
+	
+	Page<Persona> listarPageable(Pageable pageable);
+	
+}
+
+```
+5. Creamos clase "PresonaServiceImpl"
+ 
+<div align="center">
+  <img src="img/cl2.jpg">
+</div>
+
+Ponemos el nombre
+<div align="center">
+  <img src="img/im.jpg">
+	
+Ingresamos el siguiente codigo:	
+```java
+package com.ws.crudsql.service;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import com.ws.crudsql.dao.IPersonaDao;
+import com.ws.crudsql.model.Persona;
+
+// Ctrl + 1 --> para implementar los metodos de la interfaz
+@Service
+public class PersonaServiceImpl implements IPersonaService {
+
+	@Autowired
+	private IPersonaDao personaDao;
+	
+	@Override
+	public Persona registrar(Persona t) {
+		System.out.println(t.toString());
+		return personaDao.save(t);
+	}
+
+	@Override
+	public Persona modificar(Persona t) {
+		return personaDao.save(t);
+	}
+
+	@Override
+	public boolean eliminar(Long id) {
+	 Optional<Persona> _p = personaDao.findById(id);
+		if(_p != null) {
+			personaDao.delete(_p.get());
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public Persona listarId(Long id) {
+		return personaDao.findById(id).get();
+	}
+
+	@Override
+	public List<Persona> listar() {
+		return personaDao.findAll();
+	}
+
+	@Override
+	public Page<Persona> listarPageable(Pageable pageable) {
+		return personaDao.findAll(pageable);
+	}
+
+}
+
+```
+</div>
 
 
  
