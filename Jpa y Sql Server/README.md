@@ -3,7 +3,7 @@
 - [Introducción](#introducción)
 - [Preparar el entorno](#preparar-el-entorno)
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
-- [Modificamos el archivo aplication.properties](#modificamos-el-archivo-aplication.properties)
+- [Modificamos el archivo application.properties](#modificamos-el-archivo-application.properties)
 
 
 ## Introducción
@@ -44,12 +44,12 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
 
  2. Ingresamos los siguientes valores
  ```xml
-    server.port=8087 `puerto donde se conectará tu servicio`
-    server.servlet.context-path=/wb //nombre de url en este caso es wb
+    server.port=8087 "puerto donde se conectará tu servicio"
+    server.servlet.context-path=/wb "nombre de url en este caso es wb"
     spring.jpa.hibernate.ddl-auto=update
-    spring.datasource.url=jdbc:sqlserver://localhost;databaseName=BD01 //colocar el nombre de tu base de datos
-    spring.datasource.username=sa //usuario de sql server
-    spring.datasource.password=mypassword //contraseña de sql server
+    spring.datasource.url=jdbc:sqlserver://localhost;databaseName=BD01 "colocar el nombre de tu base de datos"
+    spring.datasource.username=sa "usuario de sql server"
+    spring.datasource.password=mypassword "contraseña de sql server"
     spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
     spring.jpa.show-sql=true
     spring.jpa.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
