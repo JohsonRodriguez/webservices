@@ -3,7 +3,8 @@
 - [Introducción](#introducción)
 - [Preparar el entorno](#preparar-el-entorno)
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
-- [Modificamos el archivo application.properties](#modificamos-el-archivo-application.properties)
+- [Modificamos el archivo application properties](#modificamos-el-archivo-application-propertiess)
+- [Creamos el paquete y clase del modelo](#creamos-el-paquete-y-clase-del-modelo)
 
 
 ## Introducción
@@ -35,7 +36,7 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
  3. Buscamos la carpeta de nuestro proyecto descargado
  4. Seleccionamos pom.xml y presionamos finalizar
  
- ## Modificamos el archivo application.properties
+ ## Modificamos el archivo application properties
  
  1. Abrimos el archivo application.properties
  <div align="center">
@@ -43,7 +44,7 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
 </div>
 
  2. Ingresamos los siguientes valores
- ```xml
+ ```
     server.port=8087 "puerto donde se conectará tu servicio"
     server.servlet.context-path=/wb "nombre de url en este caso es wb"
     spring.jpa.hibernate.ddl-auto=update
@@ -54,6 +55,111 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
     spring.jpa.show-sql=true
     spring.jpa.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
 ```
+## Creamos el paquete y clase del modelo
+1. Creamos el paquete
+<div align="center">
+  <img src="img/pa.jpg">
+</div>
+2. Le ponemos el nombre del modelo
+<div align="center">
+  <img src="img/pa2.jpg">
+</div>
+
+3. Creamos la clase "Persona"
+<div align="center">
+  <img src="img/cl.jpg">
+</div>
+
+4. Ingresamos el código siguiente:
+
+```java
+package com.ws.crudsql.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tblPersona")
+public class Persona {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idPersona;
+	
+	@Column(name="nombres", nullable=false, length=50)
+	private String nombres;
+	
+	@Column(name="apellidos", nullable=false, length=50)
+	private String apellidos;
+
+	public Long getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(Long idPersona) {
+		this.idPersona = idPersona;
+	}
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [idPersona=" + idPersona + ", nombres=" + nombres + ", apellidos=" + apellidos + "]";
+	}
+	
+}
+
+```
+##Creamos el paquete Dao y la interfaz
+
+1. Creamos el paquete
+<div align="center">
+  <img src="img/pa.jpg">
+</div>
+2. Le ponemos el nombre de dao
+<div align="center">
+  <img src="img/pa3.jpg">
+</div>
+
+3. Creamos la interfaz "IPersonaDao"
+<div align="center">
+  <img src="img/in.jpg">
+</div>
+<div align="center">
+  <img src="img/in2.jpg">
+</div>
+
+4. Ingresamos el código siguiente:
+
+```java
+package com.ws.crudsql.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ws.crudsql.model.Persona;
+
+public interface IPersonaDao extends JpaRepository<Persona, Long> {
+
+}
+```
+
 
 
 
