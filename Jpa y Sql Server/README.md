@@ -6,6 +6,9 @@
 - [Modificamos el archivo application properties](#modificamos-el-archivo-application-propertiess)
 - [Creamos el paquete y clase del modelo](#creamos-el-paquete-y-clase-del-modelo)
 - [Creamos el paquete Dao y su interfaz](#creamos-el-paquete-dao-y-su-interfaz)
+- [Creamos el paquete Service y su interfaz](#creamos-el-paquete-service-y-su-interfaz)
+- [Creamos paquete Controller y su clase](#creamos-paquete-controller-y-su-clase)
+
 
 
 ## Introducción
@@ -128,7 +131,7 @@ public class Persona {
 }
 
 ```
-##Creamos el paquete Dao y su interfaz
+## Creamos el paquete Dao y su interfaz
 
 1. Creamos el paquete
 <div align="center">
@@ -162,7 +165,7 @@ public interface IPersonaDao extends JpaRepository<Persona, Long> {
 
 }
 ```
-##Creamos el paquete Service y su interfaz
+## Creamos el paquete Service y su interfaz
 1. Creamos el paquete
 <div align="center">
   <img src="img/pa.jpg">
@@ -277,7 +280,7 @@ public class PersonaServiceImpl implements IPersonaService {
 }
 
 ```
-### Creamos paquete Controller y su clase
+## Creamos paquete Controller y su clase
 
 1. Creamos el paquete
 <div align="center">
