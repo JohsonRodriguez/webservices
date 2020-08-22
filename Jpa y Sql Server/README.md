@@ -5,6 +5,7 @@
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
 - [Modificamos el archivo application.properties](#modificamos-el-archivo-application.properties)
 
+
 ## Introducción
 
 Con este servicio web podemos crear tablas, realizar CRUD y paginación en Sql Server usando JPA.
@@ -36,7 +37,26 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
  
  ## Modificamos el archivo application.properties
  
- 1. Abrimos el archivo 
+ 1. Abrimos el archivo application.properties
+ <div align="center">
+  <img src="img/ap.jpg">
+</div>
+
+ 2. Ingresamos los siguientes valores
+ ```xml
+    server.port=8087 "puerto donde se conectará tu servicio"
+    server.servlet.context-path=/wb "nombre de url en este caso es wb"
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=jdbc:sqlserver://localhost;databaseName=BD01 "colocar el nombre de tu base de datos"
+    spring.datasource.username=sa "usuario de sql server"
+    spring.datasource.password=mypassword "contraseña de sql server"
+    spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+    spring.jpa.show-sql=true
+    spring.jpa.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
+```
+
+
+
  
  
  
