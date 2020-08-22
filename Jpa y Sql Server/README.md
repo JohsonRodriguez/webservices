@@ -3,8 +3,8 @@
 - [Introducción](#introducción)
 - [Preparar el entorno](#preparar-el-entorno)
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
-- [Modificamos el archivo aplication.properties](#modificamos-el-archivo-application-properties)
-- [Modificamos el archivo application properties](#modificamos-el-archivo-application-properties)
+- [Modificamos el archivo aplication.properties](#modificamos-el-archivo-application.properties)
+
 
 ## Introducción
 
@@ -43,7 +43,7 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
 </div>
 
  2. Ingresamos los siguientes valores
- ````xml
+ ```xml
     server.port=8087 // puerto donde se conectará tu servicio
     server.servlet.context-path=/wb //nombre de url en este caso es wb
     spring.jpa.hibernate.ddl-auto=update
@@ -53,7 +53,7 @@ Ingresamos a la web de spring `<link>`: https://start.spring.io/ y procedemos a 
     spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
     spring.jpa.show-sql=true
     spring.jpa.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
-````
+```
 
 
  
