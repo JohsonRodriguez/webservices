@@ -216,6 +216,7 @@ public interface IPersonaService {
 Ponemos el nombre
 <div align="center">
   <img src="img/im.jpg">
+</div>
 	
 Ingresamos el siguiente codigo:	
 ```java
@@ -276,7 +277,7 @@ public class PersonaServiceImpl implements IPersonaService {
 }
 
 ```
-</div>
+###Creamos paquete Controller y su clase
 
 
  
