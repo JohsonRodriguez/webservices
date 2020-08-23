@@ -395,7 +395,7 @@ public class PersonaController {
 
 ```
 
-Listo ahora solo tienes que probarlo con Postamn
+Listo ahora solo tienes que probarlo con Postman
  
  
  
