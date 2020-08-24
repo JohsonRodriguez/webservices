@@ -1,0 +1,13 @@
+package com.ws.crudsql;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CrudsqlApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CrudsqlApplication.class, args);
+	}
+
+}
