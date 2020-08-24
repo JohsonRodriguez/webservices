@@ -432,7 +432,7 @@ Enlace:
 `http://localhost:8087/wb1/personas/paginar/?page=2&size=5`
 
 <div align="center">
-  <img src="img/p4.jpg">
+  <img src="img/p5.jpg">
 </div>
 
 5. Actualizar con el Método Path
@@ -441,7 +441,7 @@ Enlace:
 `http://localhost:8087/wb1/personas/actualizar`
 
 <div align="center">
-  <img src="img/p5.jpg">
+  <img src="img/p6.jpg">
 </div>
 
 6. Eliminar con el Método DELETE
@@ -450,7 +450,7 @@ Enlace:
  `http://localhost:8087/wb1/personas/eliminar/11`
  
  <div align="center">
-  <img src="img/p6.jpg">
+  <img src="img/p7.jpg">
 </div>
  
 
