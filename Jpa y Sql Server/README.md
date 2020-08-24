@@ -3,11 +3,12 @@
 - [Introducción](#introducción)
 - [Preparar el entorno](#preparar-el-entorno)
 - [Importar Proyecto en Eclipse](#importar-proyecto-en-eclipse)
-- [Modificamos el archivo application properties](#modificamos-el-archivo-application-propertiess)
+- [Modificamos el archivo application properties](#modificamos-el-archivo-application-properties)
 - [Creamos el paquete y clase del modelo](#creamos-el-paquete-y-clase-del-modelo)
 - [Creamos el paquete Dao y su interfaz](#creamos-el-paquete-dao-y-su-interfaz)
 - [Creamos el paquete Service y su interfaz](#creamos-el-paquete-service-y-su-interfaz)
 - [Creamos paquete Controller y su clase](#creamos-paquete-controller-y-su-clase)
+- [Probar nuestro servicio con Postman](#probar-nuestro-servicio-con-postman)
 
 
 
@@ -395,7 +396,64 @@ public class PersonaController {
 
 ```
 
-Listo ahora solo tienes que probarlo con Postman
+Listo ahora para probarlo con Postman agregamos un registro en la tabla.
+
+# Probar nuestro servicio con Postman
+1. Listar con Método Get
+
+Enlace:
+`http://localhost:8087/wb1/personas`
+
+<div align="center">
+  <img src="img/p1.jpg">
+</div>
+
+2. Buscar con Método Get
+
+Enlace:
+`http://localhost:8087/wb1/personas/listar/1`
+
+<div align="center">
+  <img src="img/p2.jpg">
+</div>
+
+3. Agregar con el Método Post
+
+Enlace:
+`http://localhost:8087/wb1/personas/crear`
+
+<div align="center">
+  <img src="img/p3.jpg">
+</div>
+
+4. Paginar con el Método Get
+
+Enlace:
+`http://localhost:8087/wb1/personas/paginar/?page=2&size=5`
+
+<div align="center">
+  <img src="img/p4.jpg">
+</div>
+
+5. Actualizar con el Método Path
+
+Enlace:
+`http://localhost:8087/wb1/personas/actualizar`
+
+<div align="center">
+  <img src="img/p5.jpg">
+</div>
+
+6. Eliminar con el Método DELETE
+
+Enlace:
+ `http://localhost:8087/wb1/personas/eliminar/11`
+ 
+ <div align="center">
+  <img src="img/p6.jpg">
+</div>
+ 
+
  
  
  
